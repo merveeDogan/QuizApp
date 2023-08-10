@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import './index.css';
 
 function App() {
-  const [questionNumber, setQuestionNumber]=useState(setQuestionNumber);
+  const [questionNumber, setQuestionNumber]=useState(1);
   const moneyTree= useMemo(
     ()=>
     [
@@ -25,12 +25,17 @@ function App() {
   return (
     <div className="App">
     <div className='MainStage'>Stage </div>
+    <div className='Timer'>30</div> 
     <div className='Questions'>
-    <ul >
+    <ul className='Tree' >
     {moneyTree.map((m)=>(
-  <li className='Question'>
-<span className='QuestionNum'>{m.questionNo}</span>
-<span className='QuestionMoney'>{m.amount}</span>
+  <li className={
+    questionNumber === m.questionNo
+      ? "TreeListItem active"
+      : "TreeListItem"
+  }>
+<span className='QuestionNumItem'>{m.questionNo}</span>
+<span className='QuestionMoneyItem'>{m.amount}</span>
   </li>
 
     ))}
