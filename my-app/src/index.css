@@ -1,63 +1,63 @@
-.App{
-    height: 100vh;
-    display: flex;
-    background-color: rgb(1, 1, 86);
-    color: white;
-  }
-  .MainStage{
-    width: 80%;
-    background: linear-gradient(to bottom, rgba(0,0,0,0), rgb(1, 1, 86)),
-    url("./images/background.jpg") center
-   }
-   .Questions{
-    width: 20%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-   }
-   .Questions{
-    width: 25%;
-    background-color: rgb(1, 1, 86);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-   }
+.App {
+  height: 100vh;
+  display: flex;
+  background-color: rgb(1, 1, 86);
+  color: white;
+}
+.MainStage {
+  width: 80%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(1, 1, 86)),
+    url("./images/background.jpg") center;
+}
+.Questions {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Questions {
+  width: 25%;
+  background-color: rgb(1, 1, 86);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-   .Tree{
-    padding: 40px;
-   list-style: none;
-   width: 100%;
-   }
-   .QuestionNumItem{
-    width: 35%;
-    font-size: 21px;
-   }
-   .QuestionMoneyItem{
-    font-size: 20px;
-   }
+.Tree {
+  padding: 40px;
+  list-style: none;
+  width: 100%;
+}
+.QuestionNumItem {
+  width: 35%;
+  font-size: 21px;
+}
+.QuestionMoneyItem {
+  font-size: 20px;
+}
 
-   .TreeListItem {
-    display: flex;
-    align-items: center;
-    padding: 5px;
-    border-radius: 5px;
-  }
-  
-  .TreeListItem.active {
-    background-color: teal;
-  }
+.TreeListItem {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-radius: 5px;
+}
 
-  .Timer{
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    border: 5px solid gold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top:180px;
-    left: 80px;
-    font-size: 30px;
-    font-weight: 700;
-  }
+.TreeListItem.active {
+  background-color: teal;
+}
+
+.Timer {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 5px solid gold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 180px;
+  left: 80px;
+  font-size: 30px;
+  font-weight: 700;
+}
