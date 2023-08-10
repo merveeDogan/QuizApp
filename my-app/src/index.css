@@ -15,3 +15,34 @@
     align-items: center;
     justify-content: center;
    }
+   .Questions{
+    width: 25%;
+    background-color: rgb(1, 1, 86);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
+
+   .Tree{
+    padding: 40px;
+   list-style: none;
+   width: 100%;
+   }
+   .QuestionNumItem{
+    width: 35%;
+    font-size: 21px;
+   }
+   .QuestionMoneyItem{
+    font-size: 20px;
+   }
+
+   .TreeListItem {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+  .TreeListItem.active {
+    background-color: teal;
+  }
