@@ -1,9 +1,11 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import './index.css';
 import Timer from './Components/Timer';
+import Game from './Components/Timer';
 function App() {
   const [questionNumber, setQuestionNumber] = useState(1);
   const [timeOver, setTimeOver] = useState(false);
+  const [earnedMoney, setEarnedMoney]=useState("$ 0");
   const moneyTree = useMemo(
     () =>
       [
@@ -20,11 +22,15 @@ function App() {
         { questionNo: 11, amount: " $ 250.000" },
         { questionNo: 12, amount: " $ 1.000.000" }
 
-      ].reverse()
-  )
-  const data = [
+      ].reverse(), []
+  ); 
+  useEffect(()=>{
+    questionNumber>1 && setEarnedMoney(moneyTree.find((m) => m.id === questionNumber - 1).amount);
+  }, [questionNumber, moneyTree]);
+
+  const questionList = [
     {
-      questionNumber: 1,
+      questionNo: 1,
       question: "Bilgisayar biliminde 'HTML' kısaltması neyi temsil eder?",
       answers: [
         {
@@ -46,7 +52,7 @@ function App() {
       ],
     },
     {
-      questionNumber: 2,
+      questionNo: 2,
       question: "Bir bilgisayarın temel işlem birimi nedir?",
       answers: [
         {
@@ -68,7 +74,7 @@ function App() {
       ],
     },
     {
-      questionNumber: 3,
+      questionNo: 3,
       question: "Bir dizi elemanını ekrana yazdırmak için genellikle hangi döngü yapısı kullanılır?",
       answers: [
         {
@@ -90,7 +96,7 @@ function App() {
       ],
     },
     {
-      id: 4,
+      questionNo: 4,
       question: "Bir fonksiyonun içinde tanımlanan değişkene ne ad verilir?",
       answers: [
         {
@@ -112,7 +118,7 @@ function App() {
       ],
     },
     {
-      id: 5,
+      questionNo: 5,
       question: "Bir SQL veritabanı sorgusunda 'SELECT' ifadesinin amacı nedir?",
       answers: [
         {
@@ -134,7 +140,7 @@ function App() {
       ],
     },
     {
-      id: 6,
+      questionNo: 6,
       question: "Bir bilgisayarın belleğinde geçici olarak veri saklamak için hangi kavram kullanılır?",
       answers: [
         {
@@ -156,7 +162,7 @@ function App() {
       ],
     },
     {
-      id: 7,
+      questionNo: 7,
       question: "Bir yazılım geliştirme sürecinde 'Agile' metodolojisi ne anlama gelir?",
       answers: [
         {
@@ -178,7 +184,7 @@ function App() {
       ],
     },
     {
-      id: 8,
+      questionNo: 8,
       question: "Bir döngünün tamamlanma sayısıyla ilgilenmeden, belirli bir koşulu sağladığında çalışmasını sağlamak için hangi döngü yapısı kullanılır?",
       answers: [
         {
@@ -200,7 +206,7 @@ function App() {
       ],
     },
     {
-      id: 9,
+      questionNo: 9,
       question: "Bir veritabanı sorgusunda birden fazla tabloyu birleştirmek için hangi anahtar kelime kullanılır?",
       answers: [
         {
@@ -222,7 +228,7 @@ function App() {
       ],
     },
     {
-      id: 10,
+      questionNo: 10,
       question: "Bir programlama dilinde 'thread' terimi ne anlama gelir?",
       answers: [
         {
@@ -244,7 +250,7 @@ function App() {
       ],
     },
     {
-      id: 11,
+      questionNo: 11,
       question: "Bir programlama dilinde 'pointer' terimi ne anlama gelir?",
       answers: [
         {
@@ -266,7 +272,7 @@ function App() {
       ],
     },
     {
-      id: 12,
+      questionNo: 12,
       question: "Bir Unix tabanlı işletim sisteminde, bir dosya veya dizinin sahibi, sahibin grubu ve diğer kullanıcılar arasında erişim izinlerini ayarlamak için kullanılan komut nedir?",
       answers: [
         {
@@ -288,13 +294,6 @@ function App() {
       ],
     }
 
-
-
-
-
-
-
-
   ]
   return (
     <div className="App">
@@ -303,6 +302,12 @@ function App() {
         <Timer setTimeOver={setTimeOver}
           questionNumber={questionNumber} />
       </div>
+      <div className='seeQuestion'>
+        <Game questionList={questionList}  
+              questionNumber={questionNumber}
+              setQuestionNumber={setQuestionNumber}
+              setTimeOver={setTimeOver} />
+        </div> 
       <div className='Questions'>
         <ul className='Tree' >
           {moneyTree.map((m) => (
