@@ -1,8 +1,9 @@
 import { useMemo, useState } from 'react';
 import './index.css';
-
+import Timer from './Components/Timer';
 function App() {
   const [questionNumber, setQuestionNumber]=useState(1);
+  const [timeOver, setTimeOver]=useState(false);
   const moneyTree= useMemo(
     ()=>
     [
@@ -25,7 +26,10 @@ function App() {
   return (
     <div className="App">
     <div className='MainStage'>Stage </div>
-    <div className='Timer'>30</div> 
+    <div className='Timer'>
+    <Timer  setTimeOver={setTimeOver}
+            questionNumber={questionNumber}       />
+    </div> 
     <div className='Questions'>
     <ul className='Tree' >
     {moneyTree.map((m)=>(

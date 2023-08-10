@@ -46,3 +46,18 @@
   .TreeListItem.active {
     background-color: teal;
   }
+
+  .Timer{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 5px solid gold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top:180px;
+    left: 80px;
+    font-size: 30px;
+    font-weight: 700;
+  }
