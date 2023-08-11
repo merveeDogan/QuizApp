@@ -154,13 +154,33 @@
   height: 40%;
   position: relative;
 }
+/* Add this to your index.css file */
 .endText {
   position: relative;
-  top: 40%;
-  bottom: 0;
-  left: 40%;
-  right: 0;
+  top: 30%;
+  left: 50%; /* Updated to center horizontally */
+  transform: translateX(-50%); /* Center horizontally */
   margin: auto;
-  font-size: 40px;
+  font-size: 30px;
   color: rgb(225, 227, 226);
+  text-align: center; /* Center-align the text */
+}
+
+.playagain {
+  width: 30%;
+  padding:10px;
+  margin: 0 auto 20px auto; /* Center the button horizontally */
+  display: block; /* Make the button a block element for centering */
+  text-align: center;
+  background: linear-gradient(#0e0124, #22074d);
+  border: 1px solid white;
+  border-radius: 15px;
+  font-weight: 300;
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+}
+.playagain:hover {
+  background-color: #fff;
+  color: pink;
 }

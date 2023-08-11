@@ -12,7 +12,7 @@ function App() {
       question: "Bilgisayar biliminde 'HTML' kısaltması neyi temsil eder?",
       answers: [
         {
-          text: "Hiper Text Markup Language",
+          text: "Hyper Text Markup Language",
           correct: true,
         },
         {
@@ -300,7 +300,14 @@ function App() {
     <div className="App">
       <div className='MainStage'>
       {timeOver ? (
-              <h1 className="endText">You earned: {earnedMoney}</h1>
+          <div className="endText">
+          <h1>You earned: {earnedMoney}</h1>
+          <button className="playagain" onClick={() => window.location.reload()}>
+            Play Again
+          </button>
+        </div>
+              
+              
             ) : (
               <>
                 <div className="top">
